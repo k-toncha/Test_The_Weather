@@ -40,7 +40,7 @@ with open("cities.txt") as file:
 async def get_weather(obj):
     async with aiohttp.ClientSession() as session:
         url = 'http://api.openweathermap.org/data/2.5/weather'
-        params = {'q': obj.name_en, "APPID": "2a4ff86f9aaa70041ec8e82db64abf56", "units": "metric", 'lang': 'ru'}
+        params = {'q': obj.name_en, "APPID": "2:a4ff86f9aaa70041ec8e82db64abf56", "units": "metric", 'lang': 'ru'}
 
         async with session.get(url, params=params) as response:
             w_json = await response.json()
